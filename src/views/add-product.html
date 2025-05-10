@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <style>
+       
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 64px);
+        }
+
+        .form-box {
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-box h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        Add Product Page
+    </nav>
+
+    <div class="container">
+        <div class="form-box">
+            <h2>Add a New Product</h2>
+            <form action="/product/add" method="post">
+                <input type="text" placeholder="Enter product name" name="title" required />
+                <br />
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

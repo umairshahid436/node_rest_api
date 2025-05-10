@@ -1,0 +1,33 @@
+const express=require("express");
+const bodyParser=require("body-parser");
+
+const productRoutes=require("./routes/product");
+
+const app=express();
+
+// use() allow us to add middleware
+// app.use("/");
+// app.use((req,res,next)=>{
+//    console.log("in this middleware")
+//    next(); // Allows the request to cont. to the next middleware
+// });
+
+
+// It will register a middleware and it will parse body in request
+app.use(bodyParser.urlencoded({
+   extended:false
+}));
+
+app.use(productRoutes);
+// only trigger for post request. If we use app.use then it will be triggered for get and post
+// app.post("/add",(req,res,)=>{
+//    res.send('<form action="/product" method="POST"><input type="text" name="title"/><button type="submit">Add</button</form>');
+// });
+
+
+app.get("/",(req,res)=>{res.send("Hello Server")});
+
+// const server=http.createServer(app);
+// server.listen(3000);
+
+app.listen(3000);
